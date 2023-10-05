@@ -15,3 +15,14 @@
     </form>
 </body>
 </html>
+@extends('layouts.plantilla')
+
+@section('titulo','login')
+
+@section('name')
+
+@section('contenido')
+    
+@section('partials.breadcumb')
+
+@endsection
