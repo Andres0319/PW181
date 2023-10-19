@@ -6,17 +6,23 @@ use App\Http\Controllers\diarioController;
 
 
 // Rutas individuales para controlador
-// Route::get('/', [diarioController::class,'metodoInicio'])->name('apodoinicio');
-// Route::get('/form', [diarioController::class,'metodoFormulario'])->name('apodoFormulario');
-// Route::get('/loquequieroolvidar', [diarioController::class,'metodoRecuerdos'])->name('apodoRecuerdos');
+ Route::get('/', [diarioController::class,'metodoInicio'])->name('apodoinicio');
+ Route::get('/form', [diarioController::class,'metodoFormulario'])->name('apodoFormulario');
+ Route::get('/loquequieroolvidar', [diarioController::class,'metodoRecuerdos'])->name('apodoRecuerdos');
+
+
+//Ruta para un request post del recuerdo
+Route::post('/guardarRecuerdo', [diarioController::class,'guardarRecuerdo'])->name('guardar');
+
+
 
 // Rutas agrupadas por controlador
 
-Route::controller(diarioController::class)->group(function (){
-    Route::get('/','metodoinicio')->name('apodoinicio');
-    Route::get('/form','metodoFormulario')->name('apodoFormulario');
-    Route::get('/loquequieroolvidar','metodoRecuerdos')->name('apodoRecuerdos');
-});
+// Route::controller(diarioController::class)->group(function (){
+//     Route::get('/','metodoinicio')->name('apodoinicio');
+//     Route::get('/form','metodoFormulario')->name('apodoFormulario');
+//     Route::get('/loquequieroolvidar','metodoRecuerdos')->name('apodoRecuerdos');
+// });
 
 
 
