@@ -84,7 +84,7 @@
 </div> <!-- cierre del container -->
 
 <footer>
-    <p>&copy; {{ date('Y') }} Biblioteca Readman {{ date('d F Y') }} </p>
+    <p class="text-center">&copy; {{ date('Y') }} Biblioteca Readman {{ date('d F Y') }} </p>
 </footer>
 
 @endsection

@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Http\Requests\validadorFormRecuerdos;
+use App\Http\Requests\validadorFormRegistro;
 
 class diarioController extends Controller
 {
@@ -17,9 +17,9 @@ class diarioController extends Controller
         return view ('registro');
     }
 
-    public function guardarRecuerdo(validadorFormRecuerdos $req){
+    public function guardarRecuerdo(validadorFormRegistro $req){
 
-          return redirect('/regis')->with('confirmacion','Tu Registro del libro llego al controlador');
+          return redirect('/regis')->with('confirmacion','Todo correcto: Libro ' .$req->input('titulo').' guardado');
 
          
     }
