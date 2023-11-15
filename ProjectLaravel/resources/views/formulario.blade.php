@@ -19,19 +19,20 @@
 
         <div class="card-body">
 
-            <form method="POST" action="/guardarRecuerdo">
+            <form method="POST" action="/recuerdo">
               @csrf 
 
-                <div class="mb-3">
-                  <label class="form-label">Titulo: </label>
-                  <input type="text" name="txtTitulo" class="form-control" >
-                </div>
-
-                <div class="mb-3">
-                    <label class="form-label">Recuerdo: </label>
-                    <input type="text" name="txtRecuerdo" class="form-control" >
-                  </div>
-            </div>
+              <div class="mb-3">
+                <label class="form-label">Titulo:</label>
+                <input type="text" name="txtTitulo" class="form-control" value="{{ old('txtTitulo') }}">
+                <p class="text-danger fw-bold">{{$errors->first('txtTitulo')}}</p>
+             </div>
+         
+             <div class="mb-3">
+                <label class="form-label">Recuerdo:</label>
+                <input type="text" name="txtRecuerdo" class="form-control" value="{{ old('txtRecuerdo') }}">
+                <p class="text-danger fw-bold">{{$errors->first('txtRecuerdo')}}</p>
+             </div>
 
         <div class="card-footer text-body-secondary">
             <button type="submit" class="btn btn-outline-success">Guardar Recuerdo</button>
