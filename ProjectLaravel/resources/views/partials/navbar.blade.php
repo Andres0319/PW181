@@ -13,7 +13,7 @@
             <a class="nav-link {{ request()->routeIs('recuerdo.create')?'text-primary':''}}" href="/recuerdo/create">Formulario</a>
           </li>
         <li class="nav-item">
-          <a class="nav-link {{ request()->routeIs('apodoRecuerdos')?'text-success':''}}" href="/loquequieroolvidar">Recuerdos</a>
+          <a class="nav-link {{ request()->routeIs('recuerdo.index')?'text-success':''}}" href="/recuerdo">Recuerdos</a>
         </ul>
         <form class="d-flex" role="search">
           <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">

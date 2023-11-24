@@ -79,4 +79,5 @@
   </div> <!-- Div de la tarjeta -->
   </div> <!-- Div del contenedor -->
 
+  @include ('partials.pagination')
 @endsection

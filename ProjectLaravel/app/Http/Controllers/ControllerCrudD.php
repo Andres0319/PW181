@@ -14,7 +14,8 @@ class ControllerCrudD extends Controller
      */
     public function index()
     {
-        //
+        $consR= DB::table('tb_recuerdos')->get();
+        return view('recuerdos',compact('consR'));
     }
 
     /**
@@ -61,16 +62,25 @@ class ControllerCrudD extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(validadorFormRecuerdos $request, string $id)
     {
-        //
+        DB::table('tb_recuerdos')->where('id',$id)->update([
+            "titulo"=> $request->input('txtTitulo'),
+            "recuerdo"=>$request->input('txtRecuerdo'),
+            "updated_at"=>Carbon::now(),
+        ]);
+
+        return redirect('/recuerdo')->with('confirmacion','Tu recuerdo se modifico en BD');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        //
-    }
+/**
+ * Remove the specified resource from storage.
+ */
+public function destroy(string $id)
+{
+    DB::table('tb_recuerdos')->where('id', $id)->delete();
+
+    return redirect('/recuerdo')->with('confirmacion', 'Tu recuerdo se eliminó de la BD');
+}
+
 }
